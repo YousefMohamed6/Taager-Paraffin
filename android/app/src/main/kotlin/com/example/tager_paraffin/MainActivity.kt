@@ -1,4 +1,4 @@
-package com.example.taager_online
+package com.example.tager_paraffin
 
 import io.flutter.embedding.android.FlutterActivity
 
