@@ -21,5 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "enterEmail": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
+        "enterName": MessageLookupByLibrary.simpleMessage("Enter Your Name"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("Enter Your Password"),
+        "enterPhone": MessageLookupByLibrary.simpleMessage("Phone Your Email"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password"),
+        "haveAccount":
+            MessageLookupByLibrary.simpleMessage("alerady have an account !"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "noAccount":
+            MessageLookupByLibrary.simpleMessage("don\'\'t have any account ?"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
+        "restPassword": MessageLookupByLibrary.simpleMessage("Rest Password")
+      };
 }

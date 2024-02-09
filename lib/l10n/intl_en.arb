@@ -1,1 +1,19 @@
-{}
+{
+        
+        "login": "Login",
+        "email": "Email",
+        "enterEmail": "Enter Your Email",
+        "password": "Password",
+        "enterPassword": "Enter Your Password",
+        "forgetPassword": "Forget Password",
+        "noAccount": "don''t have any account ?",
+        "registerNow": "Register Now",
+        "register": "Register",
+        "name": "Name",
+        "enterName": "Enter Your Name",
+        "phone": "Phone",
+        "enterPhone": "Phone Your Email",
+        "haveAccount": "alerady have an account !",
+        "loginNow": "Login Now",
+        "restPassword": "Rest Password"
+}

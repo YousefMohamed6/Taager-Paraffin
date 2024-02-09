@@ -1,7 +1,7 @@
 name: tager_paraffin
 description: Trading App.
 
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -9,13 +9,19 @@ environment:
   sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^4.17.4
+  firebase_core: ^2.25.4
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.3
+  flutter_launcher_icons: ^0.13.1
   flutter_localizations:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
+  font_awesome_flutter: ^10.7.0
+  go_router: ^13.1.0
+  google_sign_in: ^6.2.1
   intl: ^0.18.0
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -40,7 +46,7 @@ flutter:
           weight: 500
         - asset: assets/fonts/Roboto/Roboto-Bold.ttf
           weight: 700
-  
+
 flutter_intl:
   enabled: true
 flutter_launcher_icons:
