@@ -7,6 +7,7 @@ import 'package:tager_paraffin/core/widgets/email_text.dart';
 import 'package:tager_paraffin/features/auth/forget_Password/forget_password_cubit/forget_password_cubit.dart';
 import 'package:tager_paraffin/features/auth/forget_Password/widgets/forget_password_button.dart';
 import 'package:tager_paraffin/features/auth/forget_Password/widgets/forget_password_email_feild.dart';
+import 'package:tager_paraffin/generated/l10n.dart';
 
 class ForgetPasswodBody extends StatelessWidget {
   const ForgetPasswodBody({super.key});
@@ -17,6 +18,10 @@ class ForgetPasswodBody extends StatelessWidget {
       listener: (context, state) {
         if (state is ForgetPasswordFailure) {
           ShowMessage.show(msg: state.errorMessage);
+        }
+        if (state is ForgetPasswordSucess) {
+          Navigator.pop(context);
+          ShowMessage.show(msg: S.of(context).restEmailMessage);
         }
       },
       child: Form(

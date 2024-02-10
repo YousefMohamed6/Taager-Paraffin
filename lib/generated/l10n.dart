@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `TAGER PARAFFIN`
+  String get appName {
+    return Intl.message(
+      'TAGER PARAFFIN',
+      name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login`
   String get login {
     return Intl.message(
@@ -205,6 +215,26 @@ class S {
     return Intl.message(
       'Rest Password',
       name: 'restPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OR`
+  String get or {
+    return Intl.message(
+      'OR',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scuess Check Gmail`
+  String get restEmailMessage {
+    return Intl.message(
+      'Scuess Check Gmail',
+      name: 'restEmailMessage',
       desc: '',
       args: [],
     );

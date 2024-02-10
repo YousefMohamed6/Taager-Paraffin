@@ -9,7 +9,10 @@ class SocialAuth extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [LoginWithFacebookButton(), LoginWithGoogleButton()],
+      children: [
+        LoginWithGoogleButton(),
+        LoginWithFacebookButton(),
+      ],
     );
   }
 }

@@ -30,6 +30,7 @@ class RegisterViewBody extends StatelessWidget {
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: PaddingManager.p8),
             children: const [
+              SizedBox(height: ValuesManager.height8),
               AppLogo(),
               NameText(),
               SizedBox(height: ValuesManager.height8),

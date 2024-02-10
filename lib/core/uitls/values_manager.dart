@@ -24,5 +24,6 @@ abstract class ValuesManager {
   static const double height32 = 32;
   static const double height48 = 48;
   static const double buttonHeight = 48;
-  static const double authIconSize = 48;
+  static const double authIconSize = 56;
+  static const double animatedIconSize = 100;
 }

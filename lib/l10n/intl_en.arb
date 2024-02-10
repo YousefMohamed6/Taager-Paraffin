@@ -1,5 +1,5 @@
 {
-        
+        "appName": "TAGER PARAFFIN",
         "login": "Login",
         "email": "Email",
         "enterEmail": "Enter Your Email",
@@ -15,5 +15,7 @@
         "enterPhone": "Phone Your Email",
         "haveAccount": "alerady have an account !",
         "loginNow": "Login Now",
-        "restPassword": "Rest Password"
+        "restPassword": "Rest Password",
+        "or": "OR",
+        "restEmailMessage": "Scuess Check Gmail"
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tager_paraffin/core/uitls/show_message.dart';
-import 'package:tager_paraffin/core/uitls/styles_manager.dart';
 import 'package:tager_paraffin/core/uitls/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/app_logo.dart';
 import 'package:tager_paraffin/core/widgets/email_text.dart';
@@ -12,6 +11,7 @@ import 'package:tager_paraffin/features/auth/login/widgets/login_button.dart';
 import 'package:tager_paraffin/features/auth/login/widgets/login_email_feild.dart';
 import 'package:tager_paraffin/features/auth/login/widgets/login_password_feild.dart';
 import 'package:tager_paraffin/features/auth/login/widgets/login_row.dart';
+import 'package:tager_paraffin/features/auth/login/widgets/or_text.dart';
 import 'package:tager_paraffin/features/auth/login/widgets/social_auth.dart';
 import 'package:tager_paraffin/generated/l10n.dart';
 
@@ -35,6 +35,7 @@ class LoginViewBody extends StatelessWidget {
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: PaddingManager.p8),
             children: const [
+              SizedBox(height: ValuesManager.height8),
               AppLogo(),
               EmailText(),
               SizedBox(height: ValuesManager.height8),
@@ -44,16 +45,12 @@ class LoginViewBody extends StatelessWidget {
               SizedBox(height: ValuesManager.height8),
               LoginPasswordFeild(),
               ForgetPasswordTextButton(),
-              SizedBox(height: ValuesManager.height24),
+              SizedBox(height: ValuesManager.height16),
               LoginButton(),
-              SizedBox(height: ValuesManager.height24),
-              Text(
-                "or",
-                textAlign: TextAlign.center,
-                style: StyleManager.textStyle20,
-              ),
+              SizedBox(height: ValuesManager.height16),
+              ORText(),
               SocialAuth(),
-              SizedBox(height: ValuesManager.height24),
+              SizedBox(height: ValuesManager.height16),
               LoginRow(),
             ],
           ),
