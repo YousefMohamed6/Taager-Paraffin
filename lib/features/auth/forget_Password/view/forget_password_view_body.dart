@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tager_paraffin/core/uitls/show_message.dart';
 import 'package:tager_paraffin/core/uitls/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/app_logo.dart';
 import 'package:tager_paraffin/core/widgets/email_text.dart';
@@ -12,17 +13,24 @@ class ForgetPasswodBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: BlocProvider.of<ForgetPasswordCubit>(context).formKey,
-      child: ListView(
-        children: const [
-          AppLogo(),
-          EmailText(),
-          SizedBox(height: ValuesManager.sizedBoxHeight8),
-          ForgetPaswordEmailFeild(),
-          SizedBox(height: ValuesManager.sizedBoxHeight24),
-          RestPasswordButton(),
-        ],
+    return BlocListener<ForgetPasswordCubit, ForgetPasswordState>(
+      listener: (context, state) {
+        if (state is ForgetPasswordFailure) {
+          ShowMessage.show(msg: state.errorMessage);
+        }
+      },
+      child: Form(
+        key: BlocProvider.of<ForgetPasswordCubit>(context).formKey,
+        child: ListView(
+          children: const [
+            AppLogo(),
+            EmailText(),
+            SizedBox(height: ValuesManager.height8),
+            ForgetPaswordEmailFeild(),
+            SizedBox(height: ValuesManager.height24),
+            RestPasswordButton(),
+          ],
+        ),
       ),
     );
   }

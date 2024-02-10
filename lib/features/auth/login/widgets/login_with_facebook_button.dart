@@ -5,19 +5,19 @@ import 'package:tager_paraffin/core/uitls/colors_manager.dart';
 import 'package:tager_paraffin/core/uitls/values_manager.dart';
 import 'package:tager_paraffin/features/auth/login/login_cubit/login_cubit.dart';
 
-class LoginWithGoogleButton extends StatelessWidget {
-  const LoginWithGoogleButton({super.key});
+class LoginWithFacebookButton extends StatelessWidget {
+  const LoginWithFacebookButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () async {
-        await BlocProvider.of<LoginCubit>(context).signInWithGoogle();
+        await BlocProvider.of<LoginCubit>(context).signInWithFacebook();
       },
       icon: const Icon(
-        FontAwesomeIcons.google,
+        FontAwesomeIcons.facebook,
         size: ValuesManager.authIconSize,
-        color: ColorManager.googleColor,
+        color: ColorManager.facebookColor,
       ),
     );
   }

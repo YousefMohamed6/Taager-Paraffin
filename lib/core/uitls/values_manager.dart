@@ -18,11 +18,11 @@ abstract class PaddingManager {
 
 abstract class ValuesManager {
   static const double borderRedius = 8;
-  static const double sizedBoxHeight8 = 8;
-  static const double sizedBoxHeight16 = 16;
-  static const double sizedBoxHeight24 = 24;
-  static const double sizedBoxHeight32 = 32;
-  static const double sizedBoxHeight48 = 48;
+  static const double height8 = 8;
+  static const double height16 = 16;
+  static const double height24 = 24;
+  static const double height32 = 32;
+  static const double height48 = 48;
   static const double buttonHeight = 48;
-  static const double googleIconSize = 38;
+  static const double authIconSize = 48;
 }

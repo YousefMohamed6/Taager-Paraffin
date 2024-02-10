@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 part 'login_state.dart';
@@ -47,8 +48,8 @@ class LoginCubit extends Cubit<LoginState> {
 
       await FirebaseAuth.instance.signInWithCredential(credential);
       emit(LoginSucess());
-    } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(errorMessage: e.code));
+    } on Exception catch (e) {
+      emit(LoginFailure(errorMessage: e.toString()));
     }
   }
 
@@ -65,6 +66,22 @@ class LoginCubit extends Cubit<LoginState> {
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithPopup(googleProvider);
       emit(LoginSucess());
+    } on FirebaseAuthException catch (e) {
+      emit(LoginFailure(errorMessage: e.code));
+    }
+  }
+
+  Future<void> signInWithFacebook() async {
+    // Trigger the sign-in flow
+    try {
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+
+      // Create a credential from the access token
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+      // Once signed in, return the UserCredential
+      await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
     } on FirebaseAuthException catch (e) {
       emit(LoginFailure(errorMessage: e.code));
     }

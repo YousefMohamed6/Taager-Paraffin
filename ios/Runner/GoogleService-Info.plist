@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>57316890248-5vm9l4r18i3cj0o88tnmvi5mc9a26pbd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.57316890248-5vm9l4r18i3cj0o88tnmvi5mc9a26pbd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>57316890248-886l3cismagk54l544kdapvn2kqo0atu.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC1vR_MyCKtADKRc4usIYk9z382lQ95qfM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>57316890248</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.tagerParaffin</string>
+	<key>PROJECT_ID</key>
+	<string>tager-paraffin</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tager-paraffin.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:57316890248:ios:66e21533e0f3706b7d313d</string>
+</dict>
+</plist>

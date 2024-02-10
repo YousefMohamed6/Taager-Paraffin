@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "57316890248",
+    "project_id": "tager-paraffin",
+    "storage_bucket": "tager-paraffin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57316890248:android:763dd0be67ed83827d313d",
+        "android_client_info": {
+          "package_name": "com.example.tager_paraffin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57316890248-886l3cismagk54l544kdapvn2kqo0atu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tager_paraffin",
+            "certificate_hash": "538e9e9ed745d9cd23415bb76a05f762064ff0c1"
+          }
+        },
+        {
+          "client_id": "57316890248-qnj2fg9un72tc913gm486cf5ltvg9tgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tager_paraffin",
+            "certificate_hash": "46ea248d4996df7ff5b5aa9fe79516bdda1eac0a"
+          }
+        },
+        {
+          "client_id": "57316890248-qduqpm01ul7iopieop47mn75u5v7j4re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Btjv7iwQUvXkktlSq37ZlFdKfPCWr9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57316890248-qduqpm01ul7iopieop47mn75u5v7j4re.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "57316890248-5vm9l4r18i3cj0o88tnmvi5mc9a26pbd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tagerParaffin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

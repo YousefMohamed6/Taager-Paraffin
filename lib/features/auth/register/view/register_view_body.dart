@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tager_paraffin/core/uitls/show_message.dart';
 import 'package:tager_paraffin/core/uitls/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/app_logo.dart';
 import 'package:tager_paraffin/core/widgets/email_text.dart';
@@ -17,29 +18,36 @@ class RegisterViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Form(
-        key: BlocProvider.of<RegisterCubit>(context).formKey,
-        child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: PaddingManager.p8),
-          children: const [
-            AppLogo(),
-            NameText(),
-            SizedBox(height: ValuesManager.sizedBoxHeight8),
-            RegsiterNameFeild(),
-            SizedBox(height: ValuesManager.sizedBoxHeight16),
-            EmailText(),
-            SizedBox(height: ValuesManager.sizedBoxHeight8),
-            RegsiterEmailField(),
-            SizedBox(height: ValuesManager.sizedBoxHeight16),
-            PasswordText(),
-            SizedBox(height: ValuesManager.sizedBoxHeight8),
-            RegsiterPasswordFeild(),
-            SizedBox(height: ValuesManager.sizedBoxHeight48),
-            RegisterButton(),
-            SizedBox(height: ValuesManager.sizedBoxHeight24),
-            RegisterRow(),
-          ],
+    return BlocListener<RegisterCubit, RegisterState>(
+      listener: (context, state) {
+        if (state is RegisterFailure) {
+          ShowMessage.show(msg: state.errorMessage);
+        }
+      },
+      child: SafeArea(
+        child: Form(
+          key: BlocProvider.of<RegisterCubit>(context).formKey,
+          child: ListView(
+            padding: const EdgeInsets.symmetric(horizontal: PaddingManager.p8),
+            children: const [
+              AppLogo(),
+              NameText(),
+              SizedBox(height: ValuesManager.height8),
+              RegsiterNameFeild(),
+              SizedBox(height: ValuesManager.height16),
+              EmailText(),
+              SizedBox(height: ValuesManager.height8),
+              RegsiterEmailField(),
+              SizedBox(height: ValuesManager.height16),
+              PasswordText(),
+              SizedBox(height: ValuesManager.height8),
+              RegsiterPasswordFeild(),
+              SizedBox(height: ValuesManager.height48),
+              RegisterButton(),
+              SizedBox(height: ValuesManager.height24),
+              RegisterRow(),
+            ],
+          ),
         ),
       ),
     );
