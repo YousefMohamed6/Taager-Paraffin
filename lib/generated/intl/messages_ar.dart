@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "RestPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "appName": MessageLookupByLibrary.simpleMessage("تاجر برافين"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الكتروني"),
         "emailUsed":
@@ -32,8 +34,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPassword":
             MessageLookupByLibrary.simpleMessage("ادخل كلمة المرور"),
         "enterPhone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتف"),
-        "forgetPassword":
-            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "haveAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل!"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -53,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نجحت افحص رسائل البريد"),
         "restPassword":
             MessageLookupByLibrary.simpleMessage("اعادة ضبط كلمة المرور"),
+        "send": MessageLookupByLibrary.simpleMessage("ارسال"),
         "verifyEmailMessage": MessageLookupByLibrary.simpleMessage(
             "نجحت فعل حسابك من رسائل البريد الالكتروني"),
         "weakPassword": MessageLookupByLibrary.simpleMessage("كلمة مرور ضعيفة"),

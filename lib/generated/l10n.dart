@@ -110,11 +110,11 @@ class S {
     );
   }
 
-  /// `Forget Password`
-  String get forgetPassword {
+  /// `Rest Password`
+  String get RestPassword {
     return Intl.message(
-      'Forget Password',
-      name: 'forgetPassword',
+      'Rest Password',
+      name: 'RestPassword',
       desc: '',
       args: [],
     );
@@ -220,6 +220,16 @@ class S {
     );
   }
 
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `OR`
   String get or {
     return Intl.message(
@@ -230,10 +240,10 @@ class S {
     );
   }
 
-  /// `Scuess Check Gmail`
+  /// `Sucess Check Gmail messages`
   String get restEmailMessage {
     return Intl.message(
-      'Scuess Check Gmail',
+      'Sucess Check Gmail messages',
       name: 'restEmailMessage',
       desc: '',
       args: [],

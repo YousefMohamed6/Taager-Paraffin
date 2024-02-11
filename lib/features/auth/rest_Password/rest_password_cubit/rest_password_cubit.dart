@@ -4,19 +4,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tager_paraffin/core/uitls/key_manager.dart';
 import 'package:tager_paraffin/generated/l10n.dart';
 
-part 'forget_password_state.dart';
+part 'rest_password_state.dart';
 
-class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
-  ForgetPasswordCubit() : super(ForgetPasswordInitial());
+class RestPasswordCubit extends Cubit<RestPasswordState> {
+  RestPasswordCubit() : super(RestPasswordInitial());
   final email = TextEditingController();
   final formKey = GlobalKey<FormState>();
   Future<void> restPassword() async {
-    emit(ForgetPasswordLoading());
+    emit(RestPasswordLoading());
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email.text);
-      emit(ForgetPasswordSucess());
+      emit(RestPasswordSucess());
     } on FirebaseAuthException catch (e) {
-      emit(ForgetPasswordFailure(exceptionMessage: e.code));
+      emit(RestPasswordFailure(exceptionMessage: e.code));
     }
   }
 

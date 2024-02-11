@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "RestPassword": MessageLookupByLibrary.simpleMessage("Rest Password"),
         "appName": MessageLookupByLibrary.simpleMessage("TAGER PARAFFIN"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailUsed":
@@ -31,8 +32,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPassword":
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
         "enterPhone": MessageLookupByLibrary.simpleMessage("ُEnter Your Email"),
-        "forgetPassword":
-            MessageLookupByLibrary.simpleMessage("Forget Password"),
         "haveAccount":
             MessageLookupByLibrary.simpleMessage("alerady have an account !"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -50,8 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
         "restEmailMessage":
-            MessageLookupByLibrary.simpleMessage("Scuess Check Gmail"),
+            MessageLookupByLibrary.simpleMessage("Sucess Check Gmail messages"),
         "restPassword": MessageLookupByLibrary.simpleMessage("Rest Password"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
         "verifyEmailMessage":
             MessageLookupByLibrary.simpleMessage("Scuess Verify your Email"),
         "weakPassword": MessageLookupByLibrary.simpleMessage("Weak Password"),

@@ -49,7 +49,7 @@ class LoginViewBody extends StatelessWidget {
               PasswordText(),
               SizedBox(height: ValuesManager.height8),
               LoginPasswordFeild(),
-              ForgetPasswordTextButton(),
+              RestPasswordTextButton(),
               SizedBox(height: ValuesManager.height16),
               LoginButton(),
               SizedBox(height: ValuesManager.height16),
