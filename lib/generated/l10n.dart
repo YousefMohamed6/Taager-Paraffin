@@ -110,16 +110,6 @@ class S {
     );
   }
 
-  /// `Rest Password`
-  String get RestPassword {
-    return Intl.message(
-      'Rest Password',
-      name: 'RestPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `don''t have any account ?`
   String get noAccount {
     return Intl.message(
@@ -180,10 +170,10 @@ class S {
     );
   }
 
-  /// `ُEnter Your Email`
+  /// `ُEnter Your Phone`
   String get enterPhone {
     return Intl.message(
-      'ُEnter Your Email',
+      'ُEnter Your Phone',
       name: 'enterPhone',
       desc: '',
       args: [],
@@ -205,6 +195,16 @@ class S {
     return Intl.message(
       'Login Now',
       name: 'loginNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Your Password`
+  String get forgetPassword {
+    return Intl.message(
+      'Forget Your Password',
+      name: 'forgetPassword',
       desc: '',
       args: [],
     );

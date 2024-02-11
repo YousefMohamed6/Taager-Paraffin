@@ -14,6 +14,7 @@ class RegsiterNameFeild extends StatelessWidget {
     return CustomFormFeiled(
       controller: BlocProvider.of<RegisterCubit>(context).name,
       validatorText: S.of(context).enterName,
+      keyboardType: TextInputType.name,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       borderRedius: ValuesManager.borderRedius,
       borderSideColor: ColorManager.borderSideColor,

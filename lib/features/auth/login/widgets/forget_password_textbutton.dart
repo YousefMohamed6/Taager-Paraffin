@@ -4,8 +4,8 @@ import 'package:tager_paraffin/core/uitls/styles_manager.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/view/rest_password_view.dart';
 import 'package:tager_paraffin/generated/l10n.dart';
 
-class RestPasswordTextButton extends StatelessWidget {
-  const RestPasswordTextButton({super.key});
+class ForgetPasswordTextButton extends StatelessWidget {
+  const ForgetPasswordTextButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class RestPasswordTextButton extends StatelessWidget {
       children: [
         TextButton(
           child: Text(
-            S.of(context).RestPassword,
+            S.of(context).forgetPassword,
             style: StyleManager.textStyle16,
           ),
           onPressed: () {
