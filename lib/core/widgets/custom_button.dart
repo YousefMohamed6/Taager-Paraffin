@@ -6,7 +6,7 @@ import 'package:tager_paraffin/core/uitls/values_manager.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-     this.child,
+    this.child,
     required this.onPressed,
     this.buttonColor,
     this.height,
@@ -26,6 +26,11 @@ class CustomButton extends StatelessWidget {
       color: buttonColor ?? ColorManager.primary,
       height: height ?? ValuesManager.buttonHeight,
       minWidth: minWidth,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          ValuesManager.borderRedius,
+        ),
+      ),
       child: child ??
           Text(
             text!,

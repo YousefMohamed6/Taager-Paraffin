@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tager_paraffin/core/uitls/key_manager.dart';
 import 'package:tager_paraffin/core/uitls/show_message.dart';
 import 'package:tager_paraffin/core/uitls/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/app_logo.dart';
@@ -23,7 +24,11 @@ class LoginViewBody extends StatelessWidget {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginFailure) {
-          ShowMessage.show(msg: state.errorMessage);
+          var loginErrorMessage = S.of(context).loginErrorMessage;
+          ShowMessage.show(
+              msg: state.errorMessage == KeyManager.kLoginExption
+                  ? loginErrorMessage
+                  : state.errorMessage);
         }
         if (state is LoginSucess) {
           ShowMessage.show(msg: S.of(context).login);

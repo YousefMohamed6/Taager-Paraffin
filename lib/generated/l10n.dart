@@ -239,6 +239,26 @@ class S {
       args: [],
     );
   }
+
+  /// `your email or password is wrong`
+  String get loginErrorMessage {
+    return Intl.message(
+      'your email or password is wrong',
+      name: 'loginErrorMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scuess Verify your Email`
+  String get verifyEmailMessage {
+    return Intl.message(
+      'Scuess Verify your Email',
+      name: 'verifyEmailMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

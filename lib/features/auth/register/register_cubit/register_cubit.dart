@@ -26,7 +26,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         email: email.text,
         password: password.text,
       );
-      await FirebaseAuth.instance.currentUser!.updateDisplayName(name.text);
+      await FirebaseAuth.instance.currentUser?.updateDisplayName(name.text);
       emit(RegisterSucess());
     } on FirebaseAuthException catch (e) {
       emit(RegisterFailure(errorMessage: e.code));

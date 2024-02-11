@@ -17,5 +17,7 @@
         "loginNow": "Login Now",
         "restPassword": "Rest Password",
         "or": "OR",
-        "restEmailMessage": "Scuess Check Gmail"
+        "restEmailMessage": "Scuess Check Gmail",
+        "loginErrorMessage": "your email or password is wrong",
+        "verifyEmailMessage": "Scuess Verify your Email"
 }

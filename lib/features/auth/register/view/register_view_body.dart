@@ -12,6 +12,7 @@ import 'package:tager_paraffin/features/auth/register/widgets/register_email_fei
 import 'package:tager_paraffin/features/auth/register/widgets/register_name_field.dart';
 import 'package:tager_paraffin/features/auth/register/widgets/register_password_feild.dart';
 import 'package:tager_paraffin/features/auth/register/widgets/register_row.dart';
+import 'package:tager_paraffin/generated/l10n.dart';
 
 class RegisterViewBody extends StatelessWidget {
   const RegisterViewBody({super.key});
@@ -22,6 +23,10 @@ class RegisterViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is RegisterFailure) {
           ShowMessage.show(msg: state.errorMessage);
+        }
+        if (state is RegisterSucess) {
+          Navigator.pop(context);
+          ShowMessage.show(msg: S.of(context).verifyEmailMessage);
         }
       },
       child: SafeArea(

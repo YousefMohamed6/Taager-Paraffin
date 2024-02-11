@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "haveAccount":
             MessageLookupByLibrary.simpleMessage("alerady have an account !"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginErrorMessage": MessageLookupByLibrary.simpleMessage(
+            "your email or password is wrong"),
         "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "noAccount":
@@ -45,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
         "restEmailMessage":
             MessageLookupByLibrary.simpleMessage("Scuess Check Gmail"),
-        "restPassword": MessageLookupByLibrary.simpleMessage("Rest Password")
+        "restPassword": MessageLookupByLibrary.simpleMessage("Rest Password"),
+        "verifyEmailMessage":
+            MessageLookupByLibrary.simpleMessage("Scuess Verify your Email")
       };
 }
