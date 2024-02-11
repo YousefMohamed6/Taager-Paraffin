@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("TAGER PARAFFIN"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailUsed":
+            MessageLookupByLibrary.simpleMessage("email already in use"),
         "enterEmail": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
         "enterName": MessageLookupByLibrary.simpleMessage("Enter Your Name"),
         "enterPassword":
@@ -34,8 +36,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "haveAccount":
             MessageLookupByLibrary.simpleMessage("alerady have an account !"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
-        "loginErrorMessage": MessageLookupByLibrary.simpleMessage(
-            "your email or password is wrong"),
         "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "noAccount":
@@ -49,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Scuess Check Gmail"),
         "restPassword": MessageLookupByLibrary.simpleMessage("Rest Password"),
         "verifyEmailMessage":
-            MessageLookupByLibrary.simpleMessage("Scuess Verify your Email")
+            MessageLookupByLibrary.simpleMessage("Scuess Verify your Email"),
+        "weakPassword": MessageLookupByLibrary.simpleMessage("Weak Password"),
+        "wrongEmail": MessageLookupByLibrary.simpleMessage("invalid email"),
+        "wrongPassword": MessageLookupByLibrary.simpleMessage(
+            "your email or password is wrong")
       };
 }

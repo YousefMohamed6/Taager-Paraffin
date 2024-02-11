@@ -17,7 +17,12 @@ class ForgetPasswodBody extends StatelessWidget {
     return BlocListener<ForgetPasswordCubit, ForgetPasswordState>(
       listener: (context, state) {
         if (state is ForgetPasswordFailure) {
-          ShowMessage.show(msg: state.errorMessage);
+          String errorMessage =
+              BlocProvider.of<ForgetPasswordCubit>(context).handleErrorMessage(
+            exceptionMessage: state.exceptionMessage,
+            context: context,
+          );
+          ShowMessage.show(msg: errorMessage);
         }
         if (state is ForgetPasswordSucess) {
           Navigator.pop(context);

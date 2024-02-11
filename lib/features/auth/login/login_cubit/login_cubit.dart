@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:tager_paraffin/core/uitls/key_manager.dart';
+import 'package:tager_paraffin/generated/l10n.dart';
 
 part 'login_state.dart';
 
@@ -26,7 +28,18 @@ class LoginCubit extends Cubit<LoginState> {
       );
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(errorMessage: e.code));
+      emit(LoginFailure(exptionMessage: e.code));
+    }
+  }
+
+  String handelErrorMessage(
+      {required String exptionMessage, required BuildContext context}) {
+    if (exptionMessage == KeyManager.kInvalidCredential) {
+      return S.of(context).wrongPassword;
+    } else if (exptionMessage == KeyManager.kInvalidEmail) {
+      return S.of(context).wrongEmail;
+    } else {
+      return "";
     }
   }
 
@@ -49,7 +62,7 @@ class LoginCubit extends Cubit<LoginState> {
       await FirebaseAuth.instance.signInWithCredential(credential);
       emit(LoginSucess());
     } on Exception catch (e) {
-      emit(LoginFailure(errorMessage: e.toString()));
+      emit(LoginFailure(exptionMessage: e.toString()));
     }
   }
 
@@ -67,7 +80,7 @@ class LoginCubit extends Cubit<LoginState> {
       await FirebaseAuth.instance.signInWithPopup(googleProvider);
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(errorMessage: e.code));
+      emit(LoginFailure(exptionMessage: e.code));
     }
   }
 
@@ -84,7 +97,7 @@ class LoginCubit extends Cubit<LoginState> {
       await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(errorMessage: e.code));
+      emit(LoginFailure(exptionMessage: e.code));
     }
   }
 }

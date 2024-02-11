@@ -10,7 +10,7 @@ final class RegisterLoading extends RegisterState {}
 final class RegisterSucess extends RegisterState {}
 
 final class RegisterFailure extends RegisterState {
-  final String errorMessage;
+  final String exceptionMessage;
 
-  RegisterFailure({required this.errorMessage});
+  RegisterFailure({required this.exceptionMessage});
 }

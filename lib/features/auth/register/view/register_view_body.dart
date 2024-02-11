@@ -22,7 +22,12 @@ class RegisterViewBody extends StatelessWidget {
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is RegisterFailure) {
-          ShowMessage.show(msg: state.errorMessage);
+          String errorMessage =
+              BlocProvider.of<RegisterCubit>(context).handleErrorMessage(
+            exceptionMessage: state.exceptionMessage,
+            context: context,
+          );
+          ShowMessage.show(msg: errorMessage);
         }
         if (state is RegisterSucess) {
           Navigator.pop(context);

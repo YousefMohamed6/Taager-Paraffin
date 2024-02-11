@@ -10,7 +10,7 @@ final class ForgetPasswordLoading extends ForgetPasswordState {}
 final class ForgetPasswordSucess extends ForgetPasswordState {}
 
 final class ForgetPasswordFailure extends ForgetPasswordState {
-  final String errorMessage;
+  final String exceptionMessage;
 
-  ForgetPasswordFailure({required this.errorMessage});
+  ForgetPasswordFailure({required this.exceptionMessage});
 }

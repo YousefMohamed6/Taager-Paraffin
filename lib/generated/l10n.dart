@@ -241,10 +241,40 @@ class S {
   }
 
   /// `your email or password is wrong`
-  String get loginErrorMessage {
+  String get wrongPassword {
     return Intl.message(
       'your email or password is wrong',
-      name: 'loginErrorMessage',
+      name: 'wrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `invalid email`
+  String get wrongEmail {
+    return Intl.message(
+      'invalid email',
+      name: 'wrongEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weak Password`
+  String get weakPassword {
+    return Intl.message(
+      'Weak Password',
+      name: 'weakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email already in use`
+  String get emailUsed {
+    return Intl.message(
+      'email already in use',
+      name: 'emailUsed',
       desc: '',
       args: [],
     );

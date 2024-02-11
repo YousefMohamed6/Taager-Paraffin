@@ -18,6 +18,9 @@
         "restPassword": "Rest Password",
         "or": "OR",
         "restEmailMessage": "Scuess Check Gmail",
-        "loginErrorMessage": "your email or password is wrong",
+        "wrongPassword": "your email or password is wrong",
+        "wrongEmail": "invalid email",
+        "weakPassword": "Weak Password",
+        "emailUsed": "email already in use",
         "verifyEmailMessage": "Scuess Verify your Email"
 }

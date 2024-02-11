@@ -10,7 +10,7 @@ final class LoginLoading extends LoginState {}
 final class LoginSucess extends LoginState {}
 
 final class LoginFailure extends LoginState {
-  final String errorMessage;
+  final String exptionMessage;
 
-  LoginFailure({required this.errorMessage});
+  LoginFailure({required this.exptionMessage});
 }
