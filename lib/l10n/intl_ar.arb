@@ -23,5 +23,6 @@
         "weakPassword": "كلمة مرور ضعيفة",
         "emailUsed": "هذا البريد مستخدم بالفعل",
         "loginSuccessMessage": "نجح تسجيل الدخول",
-        "verifyEmailMessage": "نجحت فعل حسابك من رسائل البريد الالكتروني"
+        "verifyEmailMessage": "نجحت فعل حسابك من رسائل البريد الالكتروني",
+        "networkConnection": "خطأ في الاتصال بالانترنت"
 }

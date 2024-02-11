@@ -24,8 +24,10 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       {required String exceptionMessage, required BuildContext context}) {
     if (exceptionMessage == KeyManager.kInvalidEmail) {
       return S.of(context).wrongEmail;
+    } else if (exceptionMessage == KeyManager.kNetworkConnection) {
+      return S.of(context).networkConnection;
     } else {
-      return "";
+      return exceptionMessage;
     }
   }
 }

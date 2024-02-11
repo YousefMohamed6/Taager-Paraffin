@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginSuccessMessage":
             MessageLookupByLibrary.simpleMessage("نجح تسجيل الدخول"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
+        "networkConnection":
+            MessageLookupByLibrary.simpleMessage("خطأ في الاتصال بالانترنت"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك اي حساب؟"),
         "or": MessageLookupByLibrary.simpleMessage("او"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),

@@ -43,8 +43,10 @@ class RegisterCubit extends Cubit<RegisterState> {
       return S.of(context).emailUsed;
     } else if (exceptionMessage == KeyManager.kWeakPassword) {
       return S.of(context).weakPassword;
+    } else if (exceptionMessage == KeyManager.kNetworkConnection) {
+      return S.of(context).networkConnection;
     } else {
-      return "";
+      return exceptionMessage;
     }
   }
 }

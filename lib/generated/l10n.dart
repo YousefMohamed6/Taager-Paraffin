@@ -100,10 +100,10 @@ class S {
     );
   }
 
-  /// `enter your password`
+  /// `Enter Your Password`
   String get enterPassword {
     return Intl.message(
-      'enter your password',
+      'Enter Your Password',
       name: 'enterPassword',
       desc: '',
       args: [],
@@ -160,10 +160,10 @@ class S {
     );
   }
 
-  /// `enter your name`
+  /// `Enter Your Name`
   String get enterName {
     return Intl.message(
-      'enter your name',
+      'Enter Your Name',
       name: 'enterName',
       desc: '',
       args: [],
@@ -180,10 +180,10 @@ class S {
     );
   }
 
-  /// `ُenter your email`
+  /// `ُEnter Your Email`
   String get enterPhone {
     return Intl.message(
-      'ُenter your email',
+      'ُEnter Your Email',
       name: 'enterPhone',
       desc: '',
       args: [],
@@ -295,6 +295,16 @@ class S {
     return Intl.message(
       'Scuess Verify your Email',
       name: 'verifyEmailMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `error in internet connection`
+  String get networkConnection {
+    return Intl.message(
+      'error in internet connection',
+      name: 'networkConnection',
       desc: '',
       args: [],
     );

@@ -25,7 +25,7 @@ class LoginViewBody extends StatelessWidget {
         if (state is LoginFailure) {
           String errorMessage =
               BlocProvider.of<LoginCubit>(context).handelErrorMessage(
-            exptionMessage: state.exptionMessage,
+            exceptionMessage: state.exceptionMessage,
             context: context,
           );
           ShowMessage.show(msg: errorMessage);

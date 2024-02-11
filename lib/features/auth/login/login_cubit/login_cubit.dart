@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(LoginInitial());
   }
 
-  Future<void> login() async {
+  Future<void> signInWithEmailAndPassword() async {
     emit(LoginLoading());
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -28,18 +28,22 @@ class LoginCubit extends Cubit<LoginState> {
       );
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(exptionMessage: e.code));
+      emit(LoginFailure(exceptionMessage: e.code));
     }
   }
 
   String handelErrorMessage(
-      {required String exptionMessage, required BuildContext context}) {
-    if (exptionMessage == KeyManager.kInvalidCredential) {
+      {required String exceptionMessage, required BuildContext context}) {
+    if (exceptionMessage == KeyManager.kInvalidCredential) {
       return S.of(context).wrongPassword;
-    } else if (exptionMessage == KeyManager.kInvalidEmail) {
+    } else if (exceptionMessage == KeyManager.kInvalidEmail) {
       return S.of(context).wrongEmail;
+    } else if (exceptionMessage == KeyManager.kDifferentCredential) {
+      return S.of(context).emailUsed;
+    } else if (exceptionMessage == KeyManager.kNetworkConnection) {
+      return S.of(context).networkConnection;
     } else {
-      return "";
+      return exceptionMessage;
     }
   }
 
@@ -62,7 +66,7 @@ class LoginCubit extends Cubit<LoginState> {
       await FirebaseAuth.instance.signInWithCredential(credential);
       emit(LoginSucess());
     } on Exception catch (e) {
-      emit(LoginFailure(exptionMessage: e.toString()));
+      emit(LoginFailure(exceptionMessage: e.toString()));
     }
   }
 
@@ -80,7 +84,7 @@ class LoginCubit extends Cubit<LoginState> {
       await FirebaseAuth.instance.signInWithPopup(googleProvider);
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(exptionMessage: e.code));
+      emit(LoginFailure(exceptionMessage: e.code));
     }
   }
 
@@ -97,7 +101,7 @@ class LoginCubit extends Cubit<LoginState> {
       await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailure(exptionMessage: e.code));
+      emit(LoginFailure(exceptionMessage: e.code));
     }
   }
 }
