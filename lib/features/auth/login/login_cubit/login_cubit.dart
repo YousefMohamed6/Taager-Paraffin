@@ -82,6 +82,7 @@ class LoginCubit extends Cubit<LoginState> {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+      emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
       emit(LoginFailure(errorMessage: e.code));
     }

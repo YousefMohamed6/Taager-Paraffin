@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="facebook_app_id">1399966317279573</string>
+  <string name="fb_login_protocol_scheme">fb1399966317279573</string>
+  <string name="facebook_client_token">213932ba7e90ba26305fcc5a048ef02c</string>
   <string name="app_name">تاجر برافين</string>
 </resources>
