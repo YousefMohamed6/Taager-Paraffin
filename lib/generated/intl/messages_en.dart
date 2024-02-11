@@ -27,17 +27,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailUsed":
             MessageLookupByLibrary.simpleMessage("email already in use"),
         "enterEmail": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
-        "enterName": MessageLookupByLibrary.simpleMessage("Enter Your Name"),
+        "enterName": MessageLookupByLibrary.simpleMessage("enter your name"),
         "enterPassword":
-            MessageLookupByLibrary.simpleMessage("Enter Your Password"),
-        "enterPhone": MessageLookupByLibrary.simpleMessage("Phone Your Email"),
+            MessageLookupByLibrary.simpleMessage("enter your password"),
+        "enterPhone": MessageLookupByLibrary.simpleMessage("ُenter your email"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password"),
         "haveAccount":
             MessageLookupByLibrary.simpleMessage("alerady have an account !"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
-        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "loginSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("Login Success"),
+        "name": MessageLookupByLibrary.simpleMessage("Full Name"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("don\'\'t have any account ?"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),

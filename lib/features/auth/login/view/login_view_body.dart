@@ -31,7 +31,7 @@ class LoginViewBody extends StatelessWidget {
           ShowMessage.show(msg: errorMessage);
         }
         if (state is LoginSucess) {
-          ShowMessage.show(msg: S.of(context).login);
+          ShowMessage.show(msg: S.of(context).loginSuccessMessage);
         }
       },
       child: SafeArea(

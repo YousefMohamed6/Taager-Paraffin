@@ -100,10 +100,10 @@ class S {
     );
   }
 
-  /// `Enter Your Password`
+  /// `enter your password`
   String get enterPassword {
     return Intl.message(
-      'Enter Your Password',
+      'enter your password',
       name: 'enterPassword',
       desc: '',
       args: [],
@@ -150,20 +150,20 @@ class S {
     );
   }
 
-  /// `Name`
+  /// `Full Name`
   String get name {
     return Intl.message(
-      'Name',
+      'Full Name',
       name: 'name',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enter Your Name`
+  /// `enter your name`
   String get enterName {
     return Intl.message(
-      'Enter Your Name',
+      'enter your name',
       name: 'enterName',
       desc: '',
       args: [],
@@ -180,10 +180,10 @@ class S {
     );
   }
 
-  /// `Phone Your Email`
+  /// `ُenter your email`
   String get enterPhone {
     return Intl.message(
-      'Phone Your Email',
+      'ُenter your email',
       name: 'enterPhone',
       desc: '',
       args: [],
@@ -275,6 +275,16 @@ class S {
     return Intl.message(
       'email already in use',
       name: 'emailUsed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login Success`
+  String get loginSuccessMessage {
+    return Intl.message(
+      'Login Success',
+      name: 'loginSuccessMessage',
       desc: '',
       args: [],
     );

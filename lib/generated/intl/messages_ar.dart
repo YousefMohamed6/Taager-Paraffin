@@ -22,25 +22,41 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "email": MessageLookupByLibrary.simpleMessage("Email"),
-        "enterEmail": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
-        "enterName": MessageLookupByLibrary.simpleMessage("Enter Your Name"),
+        "appName": MessageLookupByLibrary.simpleMessage("تاجر برافين"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الكتروني"),
+        "emailUsed":
+            MessageLookupByLibrary.simpleMessage("هذا البريد مستخدم بالفعل"),
+        "enterEmail":
+            MessageLookupByLibrary.simpleMessage("ادخل بريدك الالكتروني"),
+        "enterName": MessageLookupByLibrary.simpleMessage("ادخل اسمك"),
         "enterPassword":
-            MessageLookupByLibrary.simpleMessage("Enter Your Password"),
-        "enterPhone": MessageLookupByLibrary.simpleMessage("Phone Your Email"),
+            MessageLookupByLibrary.simpleMessage("ادخل كلمة المرور"),
+        "enterPhone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتف"),
         "forgetPassword":
-            MessageLookupByLibrary.simpleMessage("Forget Password"),
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "haveAccount":
-            MessageLookupByLibrary.simpleMessage("alerady have an account !"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
-        "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
-        "name": MessageLookupByLibrary.simpleMessage("Name"),
-        "noAccount":
-            MessageLookupByLibrary.simpleMessage("don\'\'t have any account ?"),
-        "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
-        "register": MessageLookupByLibrary.simpleMessage("Register"),
-        "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
-        "restPassword": MessageLookupByLibrary.simpleMessage("Rest Password")
+            MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل!"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "loginNow": MessageLookupByLibrary.simpleMessage("سجل الدخول"),
+        "loginSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("نجح تسجيل الدخول"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
+        "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك اي حساب؟"),
+        "or": MessageLookupByLibrary.simpleMessage("او"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "register": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+        "registerNow": MessageLookupByLibrary.simpleMessage("سجل الان"),
+        "restEmailMessage":
+            MessageLookupByLibrary.simpleMessage("نجحت افحص رسائل البريد"),
+        "restPassword":
+            MessageLookupByLibrary.simpleMessage("اعادة ضبط كلمة المرور"),
+        "verifyEmailMessage": MessageLookupByLibrary.simpleMessage(
+            "نجحت فعل حسابك من رسائل البريد الالكتروني"),
+        "weakPassword": MessageLookupByLibrary.simpleMessage("كلمة مرور ضعيفة"),
+        "wrongEmail":
+            MessageLookupByLibrary.simpleMessage("بريد الكتروني خاطئ"),
+        "wrongPassword": MessageLookupByLibrary.simpleMessage(
+            "بريدك الالكتروني او كلمة المرور خاطئة")
       };
 }
