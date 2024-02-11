@@ -7,4 +7,6 @@ abstract class KeyManager {
   static const String kDifferentCredential =
       "account-exists-with-different-credential";
   static const String kNetworkConnection = "network-request-failed";
+  static const String kphone = "phone";
+  static const String kUserRefr = "Users";
 }
