@@ -19,7 +19,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        context.goNamed(LoginView.routeName);
+        if (mounted) {
+          context.goNamed(LoginView.routeName);
+        }
       },
     );
     super.initState();
