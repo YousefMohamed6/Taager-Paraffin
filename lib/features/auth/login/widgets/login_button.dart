@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tager_paraffin/core/widgets/custom_button.dart';
 import 'package:tager_paraffin/core/widgets/loading_indcator.dart';
 import 'package:tager_paraffin/features/auth/login/login_cubit/login_cubit.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -18,7 +18,7 @@ class LoginButton extends StatelessWidget {
           return Column(
             children: [
               CustomButton(
-                text: S.of(context).login,
+                text: AppLocalizations.of(context)!.login,
                 onPressed: () {
                   var formKey = BlocProvider.of<LoginCubit>(context).formKey;
                   if (formKey.currentState!.validate()) {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/core/managers/values_manager.dart';
 import 'package:tager_paraffin/core/uitls/show_message.dart';
-import 'package:tager_paraffin/core/uitls/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/app_logo.dart';
 import 'package:tager_paraffin/core/widgets/email_text.dart';
 import 'package:tager_paraffin/core/widgets/password_text.dart';
@@ -14,7 +15,6 @@ import 'package:tager_paraffin/features/auth/register/widgets/register_name_fiel
 import 'package:tager_paraffin/features/auth/register/widgets/register_password_feild.dart';
 import 'package:tager_paraffin/features/auth/register/widgets/register_phone_field.dart';
 import 'package:tager_paraffin/features/auth/register/widgets/register_row.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
 
 class RegisterViewBody extends StatelessWidget {
   const RegisterViewBody({super.key});
@@ -33,7 +33,8 @@ class RegisterViewBody extends StatelessWidget {
         }
         if (state is RegisterSucess) {
           Navigator.pop(context);
-          ShowMessage.show(msg: S.of(context).verifyEmailMessage);
+          ShowMessage.show(
+              msg: AppLocalizations.of(context)!.verifyEmailMessage);
         }
       },
       child: SafeArea(

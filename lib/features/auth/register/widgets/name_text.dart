@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tager_paraffin/core/uitls/styles_manager.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/core/managers/styles_manager.dart';
 
 class NameText extends StatelessWidget {
   const NameText({super.key});
@@ -8,7 +8,7 @@ class NameText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      S.of(context).name,
+      AppLocalizations.of(context)!.name,
       style: StyleManager.textStyle20,
     );
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tager_paraffin/core/uitls/colors_manager.dart';
-import 'package:tager_paraffin/core/uitls/values_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/core/managers/colors_manager.dart';
+import 'package:tager_paraffin/core/managers/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/custom_form_filed.dart';
 import 'package:tager_paraffin/core/widgets/visable_password_button.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
 
 class PasswordFormFeild extends StatelessWidget {
   const PasswordFormFeild(
@@ -20,17 +20,17 @@ class PasswordFormFeild extends StatelessWidget {
     return CustomFormFeiled(
       controller: password,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validatorText: S.of(context).enterPassword,
+      validatorText: AppLocalizations.of(context)!.enterPassword,
       keyboardType: TextInputType.visiblePassword,
-      hintText: S.of(context).enterPassword,
+      hintText: AppLocalizations.of(context)!.enterPassword,
       prefixIcon: const Icon(Icons.security_outlined),
       suffixIcon: VisablePasswordButton(
           isObsecureText: obsecureText, onPressed: onVisablePressed),
       obscureText: obsecureText,
       borderRedius: ValuesManager.borderRedius,
-      borderSideColor: ColorManager.borderSideColor,
+      borderSideColor: ColorsManager.borderSideColor,
       enableBorderRedius: ValuesManager.borderRedius,
-      enableBorderSideColor: ColorManager.enableBorderSideColor,
+      enableBorderSideColor: ColorsManager.enableBorderSideColor,
     );
   }
 }

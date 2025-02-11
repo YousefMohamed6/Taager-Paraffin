@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tager_paraffin/core/uitls/assets_manager.dart';
-import 'package:tager_paraffin/core/uitls/values_manager.dart';
+import 'package:tager_paraffin/core/managers/assets_manager.dart';
+import 'package:tager_paraffin/core/managers/values_manager.dart';
 import 'package:tager_paraffin/features/auth/login/login_cubit/login_cubit.dart';
 
 class LoginWithGoogleButton extends StatelessWidget {

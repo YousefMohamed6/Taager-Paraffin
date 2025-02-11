@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tager_paraffin/core/uitls/key_manager.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
+import 'package:tager_paraffin/core/managers/keys_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'register_state.dart';
 
@@ -39,14 +39,14 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   String handleErrorMessage(
       {required String exceptionMessage, required BuildContext context}) {
-    if (exceptionMessage == KeyManager.kInvalidEmail) {
-      return S.of(context).wrongEmail;
-    } else if (exceptionMessage == KeyManager.kEmailAlreadyInUse) {
-      return S.of(context).emailUsed;
-    } else if (exceptionMessage == KeyManager.kWeakPassword) {
-      return S.of(context).weakPassword;
-    } else if (exceptionMessage == KeyManager.kNetworkConnection) {
-      return S.of(context).networkConnection;
+    if (exceptionMessage == KeysManager.kInvalidEmail) {
+      return AppLocalizations.of(context)!.wrongEmail;
+    } else if (exceptionMessage == KeysManager.kEmailAlreadyInUse) {
+      return AppLocalizations.of(context)!.emailUsed;
+    } else if (exceptionMessage == KeysManager.kWeakPassword) {
+      return AppLocalizations.of(context)!.weakPassword;
+    } else if (exceptionMessage == KeysManager.kNetworkConnection) {
+      return AppLocalizations.of(context)!.networkConnection;
     } else {
       return exceptionMessage;
     }
@@ -54,12 +54,12 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   Future<void> addUserDataToFirebase() async {
     CollectionReference userRefe =
-        FirebaseFirestore.instance.collection(KeyManager.kUserRefr);
+        FirebaseFirestore.instance.collection(KeysManager.kUserRefr);
     emit(RegisterLoading());
     try {
       await userRefe
           .doc(FirebaseAuth.instance.currentUser?.uid)
-          .set({KeyManager.kphone: phone.text});
+          .set({KeysManager.kphone: phone.text});
     } on Exception catch (e) {
       emit(RegisterFailure(exceptionMessage: e.toString()));
     }

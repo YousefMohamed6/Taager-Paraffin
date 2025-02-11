@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:tager_paraffin/core/uitls/key_manager.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
+import 'package:tager_paraffin/core/managers/keys_manager.dart';
 
 part 'login_state.dart';
 
@@ -34,14 +34,14 @@ class LoginCubit extends Cubit<LoginState> {
 
   String handelErrorMessage(
       {required String exceptionMessage, required BuildContext context}) {
-    if (exceptionMessage == KeyManager.kInvalidCredential) {
-      return S.of(context).wrongPassword;
-    } else if (exceptionMessage == KeyManager.kInvalidEmail) {
-      return S.of(context).wrongEmail;
-    } else if (exceptionMessage == KeyManager.kDifferentCredential) {
-      return S.of(context).emailUsed;
-    } else if (exceptionMessage == KeyManager.kNetworkConnection) {
-      return S.of(context).networkConnection;
+    if (exceptionMessage == KeysManager.kInvalidCredential) {
+      return AppLocalizations.of(context)!.wrongPassword;
+    } else if (exceptionMessage == KeysManager.kInvalidEmail) {
+      return AppLocalizations.of(context)!.wrongEmail;
+    } else if (exceptionMessage == KeysManager.kDifferentCredential) {
+      return AppLocalizations.of(context)!.emailUsed;
+    } else if (exceptionMessage == KeysManager.kNetworkConnection) {
+      return AppLocalizations.of(context)!.networkConnection;
     } else {
       return exceptionMessage;
     }
@@ -65,7 +65,9 @@ class LoginCubit extends Cubit<LoginState> {
 
       await FirebaseAuth.instance.signInWithCredential(credential);
       emit(LoginSucess());
-    } on Exception catch (e) {
+    } on FirebaseAuthException catch (e) {
+      emit(LoginFailure(exceptionMessage: e.code));
+    } catch (e) {
       emit(LoginFailure(exceptionMessage: e.toString()));
     }
   }
@@ -95,13 +97,16 @@ class LoginCubit extends Cubit<LoginState> {
 
       // Create a credential from the access token
       final OAuthCredential facebookAuthCredential =
-          FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
+          FacebookAuthProvider.credential(
+              loginResult.accessToken?.tokenString ?? '');
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
       emit(LoginSucess());
     } on FirebaseAuthException catch (e) {
       emit(LoginFailure(exceptionMessage: e.code));
+    } catch (e) {
+      emit(LoginFailure(exceptionMessage: e.toString()));
     }
   }
 }

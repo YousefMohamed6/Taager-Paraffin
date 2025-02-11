@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tager_paraffin/core/uitls/colors_manager.dart';
-import 'package:tager_paraffin/core/uitls/values_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/core/managers/colors_manager.dart';
+import 'package:tager_paraffin/core/managers/values_manager.dart';
 import 'package:tager_paraffin/core/widgets/custom_form_filed.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
 
 class EmailFormFeild extends StatelessWidget {
   const EmailFormFeild({super.key, required this.email});
@@ -12,14 +12,14 @@ class EmailFormFeild extends StatelessWidget {
     return CustomFormFeiled(
       controller: email,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validatorText: S.of(context).enterEmail,
+      validatorText: AppLocalizations.of(context)!.enterEmail,
       keyboardType: TextInputType.emailAddress,
-      hintText: S.of(context).enterEmail,
+      hintText: AppLocalizations.of(context)!.enterEmail,
       prefixIcon: const Icon(Icons.email_outlined),
       borderRedius: ValuesManager.borderRedius,
-      borderSideColor: ColorManager.borderSideColor,
+      borderSideColor: ColorsManager.borderSideColor,
       enableBorderRedius: ValuesManager.borderRedius,
-      enableBorderSideColor: ColorManager.enableBorderSideColor,
+      enableBorderSideColor: ColorsManager.enableBorderSideColor,
     );
   }
 }

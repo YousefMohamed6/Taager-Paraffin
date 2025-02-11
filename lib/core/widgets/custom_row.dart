@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tager_paraffin/core/uitls/styles_manager.dart';
+import 'package:tager_paraffin/core/managers/styles_manager.dart';
 
 class CustomRow extends StatelessWidget {
   const CustomRow(

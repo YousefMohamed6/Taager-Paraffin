@@ -1,0 +1,7 @@
+abstract class AssetsManager {
+  static const String splashLogo = "assets/images/logo.png";
+  static const String googleLogo = "assets/images/google.png";
+  static const String onBoard_1 = "assets/images/onboard_1.png";
+  static const String onBoard_2 = "assets/images/onboard_2.png";
+  static const String onBoard_3 = "assets/images/onboard_3.png";
+}

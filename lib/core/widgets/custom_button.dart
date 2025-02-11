@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tager_paraffin/core/uitls/colors_manager.dart';
-import 'package:tager_paraffin/core/uitls/styles_manager.dart';
-import 'package:tager_paraffin/core/uitls/values_manager.dart';
+import 'package:tager_paraffin/core/managers/colors_manager.dart';
+import 'package:tager_paraffin/core/managers/styles_manager.dart';
+import 'package:tager_paraffin/core/managers/values_manager.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      color: buttonColor ?? ColorManager.primary,
+      color: buttonColor ?? ColorsManager.primaryColor,
       height: height ?? ValuesManager.buttonHeight,
       minWidth: minWidth,
       shape: RoundedRectangleBorder(

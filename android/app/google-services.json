@@ -1,53 +1,45 @@
 {
   "project_info": {
-    "project_number": "57316890248",
-    "project_id": "tager-paraffin",
-    "storage_bucket": "tager-paraffin.appspot.com"
+    "project_number": "770964686305",
+    "project_id": "tajer-paraffin",
+    "storage_bucket": "tajer-paraffin.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:57316890248:android:763dd0be67ed83827d313d",
+        "mobilesdk_app_id": "1:770964686305:android:e54d2924e0b7138ae43ea0",
         "android_client_info": {
           "package_name": "com.example.tager_paraffin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "57316890248-886l3cismagk54l544kdapvn2kqo0atu.apps.googleusercontent.com",
+          "client_id": "770964686305-aipp2e1s3jls4u6foosu8g4kg8muuo3j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.tager_paraffin",
-            "certificate_hash": "538e9e9ed745d9cd23415bb76a05f762064ff0c1"
+            "certificate_hash": "b3d90b266a0e8ed9cc9b41fbdb63b933796013be"
           }
         },
         {
-          "client_id": "57316890248-qnj2fg9un72tc913gm486cf5ltvg9tgk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.tager_paraffin",
-            "certificate_hash": "46ea248d4996df7ff5b5aa9fe79516bdda1eac0a"
-          }
-        },
-        {
-          "client_id": "57316890248-qduqpm01ul7iopieop47mn75u5v7j4re.apps.googleusercontent.com",
+          "client_id": "770964686305-rn0jvesjvfi4ioj00klud09urup7vcip.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC0Btjv7iwQUvXkktlSq37ZlFdKfPCWr9w"
+          "current_key": "AIzaSyAtpSSwdS_Gwp92l17RiiAYxtE5wmUHvw4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "57316890248-qduqpm01ul7iopieop47mn75u5v7j4re.apps.googleusercontent.com",
+              "client_id": "770964686305-rn0jvesjvfi4ioj00klud09urup7vcip.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "57316890248-5vm9l4r18i3cj0o88tnmvi5mc9a26pbd.apps.googleusercontent.com",
+              "client_id": "770964686305-bbpsflfti0h0fp4e11lj42rf0ir2iiop.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.tagerParaffin"

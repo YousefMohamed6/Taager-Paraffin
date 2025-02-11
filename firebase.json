@@ -1,0 +1,24 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "tajer-paraffin",
+                    "appId": "1:770964686305:android:e54d2924e0b7138ae43ea0",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "tajer-paraffin",
+                    "configurations": {
+                        "android": "1:770964686305:android:e54d2924e0b7138ae43ea0",
+                        "ios": "1:770964686305:ios:3e0c79b33b698683e43ea0",
+                        "web": "1:770964686305:web:ceafe636b2cd777be43ea0",
+                        "windows": "1:770964686305:web:9f207949c290b011e43ea0"
+                    }
+                }
+            }
+        }
+    }
+}

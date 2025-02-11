@@ -1,4 +1,4 @@
-import 'package:tager_paraffin/core/uitls/key_manager.dart';
+import 'package:tager_paraffin/core/managers/keys_manager.dart';
 
 class UserModel {
   final String phone;
@@ -7,7 +7,7 @@ class UserModel {
 
   factory UserModel.fromJson({required Map<String, dynamic> data}) {
     return UserModel._(
-      phone: data[KeyManager.kphone],
+      phone: data[KeysManager.kphone],
     );
   }
 }

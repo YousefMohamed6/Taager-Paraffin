@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tager_paraffin/core/uitls/key_manager.dart';
-import 'package:tager_paraffin/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/core/managers/keys_manager.dart';
 
 part 'rest_password_state.dart';
 
@@ -22,10 +22,10 @@ class RestPasswordCubit extends Cubit<RestPasswordState> {
 
   String handleErrorMessage(
       {required String exceptionMessage, required BuildContext context}) {
-    if (exceptionMessage == KeyManager.kInvalidEmail) {
-      return S.of(context).wrongEmail;
-    } else if (exceptionMessage == KeyManager.kNetworkConnection) {
-      return S.of(context).networkConnection;
+    if (exceptionMessage == KeysManager.kInvalidEmail) {
+      return AppLocalizations.of(context)!.wrongEmail;
+    } else if (exceptionMessage == KeysManager.kNetworkConnection) {
+      return AppLocalizations.of(context)!.networkConnection;
     } else {
       return exceptionMessage;
     }
