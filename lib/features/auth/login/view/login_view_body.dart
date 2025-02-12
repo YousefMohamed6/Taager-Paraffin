@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tager_paraffin/core/managers/values_manager.dart';
 import 'package:tager_paraffin/core/uitls/show_message.dart';
@@ -15,7 +16,6 @@ import 'package:tager_paraffin/features/auth/login/widgets/login_row.dart';
 import 'package:tager_paraffin/features/auth/login/widgets/or_text.dart';
 import 'package:tager_paraffin/features/auth/login/widgets/social_auth.dart';
 import 'package:tager_paraffin/features/maps/presentation/views/maps_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -33,7 +33,7 @@ class LoginViewBody extends StatelessWidget {
           ShowMessage.show(msg: errorMessage);
         }
         if (state is LoginSucess) {
-          context.goNamed(MapScreen.routeName);
+          context.goNamed(MapsScreen.routeName);
           ShowMessage.show(
               msg: AppLocalizations.of(context)!.loginSuccessMessage);
         }

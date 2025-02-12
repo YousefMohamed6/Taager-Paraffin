@@ -29,7 +29,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           if (user == null) {
             context.goNamed(LoginView.routeName);
           } else {
-            context.goNamed(MapScreen.routeName);
+            context.goNamed(MapsScreen.routeName);
           }
           final String? isFirst = await SecureStorageManager.storage
               .read(key: KeysManager.kIsFirstOpenApp);

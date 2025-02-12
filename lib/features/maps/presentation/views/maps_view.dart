@@ -4,8 +4,8 @@ import 'package:tager_paraffin/features/maps/presentation/manager/maps_cubit.dar
 import 'package:tager_paraffin/features/maps/presentation/views/widgets/cutom_map_view.dart';
 import 'package:tager_paraffin/features/maps/presentation/views/widgets/find_location_button.dart';
 
-class MapScreen extends StatelessWidget {
-  const MapScreen({super.key});
+class MapsScreen extends StatelessWidget {
+  const MapsScreen({super.key});
   static const String routeName = "/MapScreen";
 
   // San Francisco

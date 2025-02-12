@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tager_paraffin/core/managers/colors_manager.dart';
 import 'package:tager_paraffin/core/managers/styles_manager.dart';
-import 'package:tager_paraffin/features/auth/login/login_cubit/login_cubit.dart';
 import 'package:tager_paraffin/features/auth/login/view/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
@@ -11,17 +9,14 @@ class LoginView extends StatelessWidget {
   static const String routeName = "/login";
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginCubit(),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.login,
-              style: StyleManager.textStyle24),
-          centerTitle: true,
-          backgroundColor: ColorsManager.primaryColor,
-        ),
-        body: const LoginViewBody(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)!.login,
+            style: StyleManager.textStyle24),
+        centerTitle: true,
+        backgroundColor: ColorsManager.primaryColor,
       ),
+      body: const LoginViewBody(),
     );
   }
 }
