@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/widgets/custom_indicator.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/widgets/next_button.dart';
-import 'package:tager_paraffin/features/onboard/pressentation/widgets/skip_button.dart';
+import 'package:tager_paraffin/features/onboard/pressentation/widgets/previous_button.dart';
 
 class NavigationRow extends StatelessWidget {
   const NavigationRow({super.key});
@@ -11,7 +11,7 @@ class NavigationRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SkipButton(),
+        PreviousButton(),
         Row(
           children: [
             CustomIndicator(currentIndex: 0),

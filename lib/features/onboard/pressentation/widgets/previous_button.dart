@@ -4,8 +4,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tager_paraffin/core/widgets/custom_label_widget.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/manager/on_board_cubit.dart';
 
-class SkipButton extends StatelessWidget {
-  const SkipButton({super.key});
+class PreviousButton extends StatelessWidget {
+  const PreviousButton({super.key});
 
   @override
   Widget build(BuildContext context) {

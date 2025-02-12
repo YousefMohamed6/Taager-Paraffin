@@ -31,5 +31,9 @@
         "previous": "Previous",
         "onBoard_1": "Welcome to Tager Paraffin",
         "onBoard_2": "We are here to help you",
-        "onBoard_3": "Let's get started"
+        "onBoard_3": "Let's get started",
+        "select_language": "Select Language",
+        "arabic": "Arabic",
+        "english": "English",
+        "save": "Save"
 }

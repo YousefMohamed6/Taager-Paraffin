@@ -12,7 +12,7 @@ part 'on_board_state.dart';
 class OnBoardCubit extends Cubit<OnBoardState> {
   OnBoardCubit() : super(OnBoardState.initial());
   final PageController onBoardController = PageController();
-
+  bool isArabic = false;
   void onPageChanged(int index) {
     onBoardController.jumpToPage(index);
     emit(OnBoardState<int>.success(index));
@@ -26,7 +26,7 @@ class OnBoardCubit extends Cubit<OnBoardState> {
         GoRouter.of(context).goNamed(LoginView.routeName);
       }
     } else {
-      onBoardController.nextPage(
+      await onBoardController.nextPage(
         duration: const Duration(milliseconds: 900),
         curve: Curves.easeIn,
       );

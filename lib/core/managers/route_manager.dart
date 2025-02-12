@@ -6,6 +6,7 @@ import 'package:tager_paraffin/features/auth/register/register_cubit/register_cu
 import 'package:tager_paraffin/features/auth/register/view/register_view.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/rest_password_cubit/rest_password_cubit.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/view/rest_password_view.dart';
+import 'package:tager_paraffin/features/language/pressentation/views/language_view.dart';
 import 'package:tager_paraffin/features/maps/presentation/manager/maps_cubit.dart';
 import 'package:tager_paraffin/features/maps/presentation/views/maps_view.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/manager/on_board_cubit.dart';
@@ -20,6 +21,13 @@ abstract class RouteManager {
         path: SplashView.routeName,
         name: SplashView.routeName,
         builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: LanguageView.routeName,
+        name: LanguageView.routeName,
+        builder: (context, state) {
+          return const LanguageView();
+        },
       ),
       GoRoute(
         path: OnBoardView.routeName,
