@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tager_paraffin/core/managers/secure_storage_service.dart';
+import 'package:tager_paraffin/core/services/firebase_notification.dart';
 import 'package:tager_paraffin/core/uitls/firebase_options.dart';
 import 'package:tager_paraffin/core/uitls/simple_observer.dart';
 import 'package:tager_paraffin/my_app.dart';
@@ -12,8 +13,14 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  // PlatformDispatcher.instance.onError = (error, stack) {
+  //   FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+  //   return true;
+  // };
   await ScreenUtil.ensureScreenSize();
-  SecureStorageManager().init();
+  await FirebaseNotificationService.instance.initialize();
   Bloc.observer = SimpleBlocObServer();
+  SecureStorageManager().init();
   runApp(MyApp());
 }

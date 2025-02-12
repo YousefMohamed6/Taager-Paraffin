@@ -5,13 +5,14 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await NotificationService.instance.setupFlutterNotifications();
-  await NotificationService.instance.showNotification(message);
+  await FirebaseNotificationService.instance.setupFlutterNotifications();
+  await FirebaseNotificationService.instance.showNotification(message);
 }
 
-class NotificationService {
-  NotificationService._();
-  static final NotificationService instance = NotificationService._();
+class FirebaseNotificationService {
+  FirebaseNotificationService._();
+  static final FirebaseNotificationService instance =
+      FirebaseNotificationService._();
 
   final _messaging = FirebaseMessaging.instance;
   final _localNotifications = FlutterLocalNotificationsPlugin();
@@ -28,7 +29,7 @@ class NotificationService {
 
     // Get FCM token
     // final token = await _messaging.getToken();
-    // print('FCM Token: $token');
+    // debugPrint('FCM Token: $token');
   }
 
   Future<void> _requestPermission() async {
