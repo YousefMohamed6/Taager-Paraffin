@@ -8,7 +8,7 @@ class LocalNotificationService {
     AndroidInitializationSettings initializationSettingsAndroid =
         const AndroidInitializationSettings('splash');
 
-    var initializationSettingsIOS = DarwinInitializationSettings(
+    final initializationSettingsIOS = DarwinInitializationSettings(
       requestAlertPermission: true,
       requestBadgePermission: true,
       requestSoundPermission: true,
@@ -16,14 +16,14 @@ class LocalNotificationService {
       //     (int id, String? title, String? body, String? payload) async {},
     );
 
-    var initializationSettings = InitializationSettings(
+    final initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     await notificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse:
             (NotificationResponse notificationResponse) async {});
   }
 
-  notificationDetails() {
+  NotificationDetails notificationDetails() {
     return const NotificationDetails(
       android: AndroidNotificationDetails(
         'channelId',
@@ -39,17 +39,17 @@ class LocalNotificationService {
     );
   }
 
-  Future showNotification({
+  Future<void> showNotification({
     int id = 0,
     String? title,
     String? body,
     String? payLoad,
   }) async {
-    return notificationsPlugin.show(
+    await notificationsPlugin.show(
       id,
       title,
       body,
-      await notificationDetails(),
+      notificationDetails(),
     );
   }
 }
