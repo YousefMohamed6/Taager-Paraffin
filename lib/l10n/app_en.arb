@@ -35,5 +35,6 @@
         "select_language": "Select Language",
         "arabic": "Arabic",
         "english": "English",
-        "save": "Save"
+        "save": "Save",
+        "no_internet":"please check your internet connection"
 }

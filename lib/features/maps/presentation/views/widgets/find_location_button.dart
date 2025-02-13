@@ -13,7 +13,7 @@ class FindLocationButton extends StatelessWidget {
         size: 64,
       ),
       onPressed: () async {
-        await context.read<MapsCubit>().getUserPostion();
+        await context.read<MapsCubit>().navigateToNewPosition();
       },
     );
   }

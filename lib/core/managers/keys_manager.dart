@@ -11,4 +11,5 @@ abstract class KeysManager {
   static const String kUserRefr = "Users";
   static const String kIsFirstOpenApp = "IsFirstOpenApp";
   static const String kLanguageCode = "LanguageCode";
+  static const String kThemeMode = "ThemeMode";
 }

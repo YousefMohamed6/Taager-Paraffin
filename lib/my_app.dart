@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:tager_paraffin/core/managers/colors_manager.dart';
 import 'package:tager_paraffin/core/managers/route_manager.dart';
+import 'package:tager_paraffin/core/widgets/no_internet_widget.dart';
 import 'package:tager_paraffin/features/language/pressentation/manager/language_provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -30,9 +32,24 @@ class CustomMatrialApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      builder: (context, child) => Stack(
+        children: [
+          // child here represents the Route Widget: the current app screen content.
+          if (child != null) child,
+          StreamBuilder<InternetConnectionStatus>(
+            stream: InternetConnectionChecker.instance.onStatusChange,
+            builder: (context, snapshot) {
+              final bool isConnected =
+                  snapshot.data == InternetConnectionStatus.connected;
+              if (isConnected) return const SizedBox();
+              return const NoInternetWidget();
+            },
+          ),
+        ],
+      ),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: ColorsManager.borderSideColor,
+        primaryColor: ColorsManager.primaryColor,
       ),
       themeMode: ThemeMode.system,
       locale: context.watch<LanguageProvider>().locale,

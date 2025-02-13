@@ -12,10 +12,10 @@ class LanguageView extends StatelessWidget {
   static const String routeName = '/language';
   @override
   Widget build(BuildContext context) {
-    return ScreenPadding(
-      child: Scaffold(
-        bottomSheet: SaveLanguageButton(),
-        body: ScreenPadding(
+    return Scaffold(
+      bottomSheet: SaveLanguageButton(),
+      body: ScreenPadding(
+        child: ScreenPadding(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,

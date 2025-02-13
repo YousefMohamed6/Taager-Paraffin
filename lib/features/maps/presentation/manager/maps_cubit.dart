@@ -56,7 +56,7 @@ class MapsCubit extends Cubit<MapsState> {
   }
 
   LatLng get _latlng => LatLng(
-        currentPostion?.altitude ?? 0,
+        currentPostion?.latitude ?? 0,
         currentPostion?.longitude ?? 0,
       );
   Future<void> navigateToNewPosition() async {
@@ -64,7 +64,7 @@ class MapsCubit extends Cubit<MapsState> {
       CameraUpdate.newCameraPosition(
         CameraPosition(
           target: _latlng,
-          zoom: 15.0,
+          zoom: 15,
         ),
       ),
     );
