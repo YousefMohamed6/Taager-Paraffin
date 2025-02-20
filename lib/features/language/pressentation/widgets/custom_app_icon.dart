@@ -11,7 +11,6 @@ class CustomAppIcon extends StatelessWidget {
       child: Image.asset(
         AssetsManager.splashLogo,
         width: (MediaQuery.sizeOf(context).width * 0.3).w,
-        alignment: Alignment.center,
       ),
     );
   }

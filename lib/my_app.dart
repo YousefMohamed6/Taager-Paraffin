@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (_, child) => CustomMatrialApp(),
+        builder: (_, child) => const CustomMatrialApp(),
       ),
     );
   }
@@ -51,7 +51,6 @@ class CustomMatrialApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: ColorsManager.primaryColor,
       ),
-      themeMode: ThemeMode.system,
       locale: context.watch<LanguageProvider>().locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -59,9 +58,9 @@ class CustomMatrialApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        const Locale('en', 'US'),
-        const Locale('ar', 'EG'),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('ar', 'EG'),
       ],
       routerConfig: RouteManager.routConfig,
     );

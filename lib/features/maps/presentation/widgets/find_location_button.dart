@@ -8,12 +8,12 @@ class FindLocationButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(
+      icon: const Icon(
         Icons.location_on,
         size: 64,
       ),
       onPressed: () async {
-        await context.read<MapsCubit>().navigateToNewPosition();
+        await context.read<MapsCubit>().navigateToCurrentLocation();
       },
     );
   }

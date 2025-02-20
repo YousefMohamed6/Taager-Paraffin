@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tager_paraffin/core/managers/colors_manager.dart';
 import 'package:tager_paraffin/core/managers/keys_manager.dart';
-import 'package:tager_paraffin/core/managers/secure_storage_service.dart';
+import 'package:tager_paraffin/core/services/secure_storage_service.dart';
 
 class ThemeManager extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.system;
@@ -31,7 +31,7 @@ class ThemeManager extends ChangeNotifier {
         textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
                 foregroundColor: ColorsManager.primaryColor)),
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
                 primary: ColorsManager.primaryColor,
                 secondary: ColorsManager.primaryColor)
             .copyWith(surface: const Color(0xFFFCFCFC))
@@ -64,7 +64,7 @@ class ThemeManager extends ChangeNotifier {
         textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
                 foregroundColor: ColorsManager.primaryColor)),
-        colorScheme: ColorScheme.dark(
+        colorScheme: const ColorScheme.dark(
           primary: ColorsManager.primaryColor,
           secondary: ColorsManager.primaryColor,
         )

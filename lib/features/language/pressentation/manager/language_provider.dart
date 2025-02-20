@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tager_paraffin/core/managers/keys_manager.dart';
-import 'package:tager_paraffin/core/managers/secure_storage_service.dart';
+import 'package:tager_paraffin/core/services/secure_storage_service.dart';
 
 class LanguageProvider extends ChangeNotifier {
-  Locale locale = Locale('en', 'US');
+  Locale locale = const Locale('en', 'US');
   bool isArabic = false;
   Future<void> getLocale() async {
     String? languageCode = await SecureStorageManager.storage.read(

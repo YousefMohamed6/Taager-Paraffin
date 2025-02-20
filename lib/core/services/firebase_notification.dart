@@ -34,15 +34,7 @@ class FirebaseNotificationService {
 
   Future<void> _requestPermission() async {
     // ignore: unused_local_variable
-    final settings = await _messaging.requestPermission(
-      alert: true,
-      badge: true,
-      sound: true,
-      provisional: false,
-      announcement: false,
-      carPlay: false,
-      criticalAlert: false,
-    );
+    final settings = await _messaging.requestPermission();
   }
 
   Future<void> setupFlutterNotifications() async {

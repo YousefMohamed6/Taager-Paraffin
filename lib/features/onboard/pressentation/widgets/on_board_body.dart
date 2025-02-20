@@ -39,7 +39,7 @@ class OnBoardViewBody extends StatelessWidget {
             },
           ),
         ),
-        NavigationRow(),
+        const NavigationRow(),
       ],
     );
   }

@@ -13,18 +13,18 @@ class LanguageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomSheet: SaveLanguageButton(),
+      bottomSheet: const SaveLanguageButton(),
       body: ScreenPadding(
         child: ScreenPadding(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppIcon(),
+              const CustomAppIcon(),
               SizedBox(height: 16.h),
               CustomLabel(text: AppLocalizations.of(context)!.select_language),
               SizedBox(height: 16.h),
-              LanguageItems(),
+              const LanguageItems(),
             ],
           ),
         ),

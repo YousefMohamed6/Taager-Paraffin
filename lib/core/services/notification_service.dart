@@ -8,13 +8,11 @@ class LocalNotificationService {
     AndroidInitializationSettings initializationSettingsAndroid =
         const AndroidInitializationSettings('splash');
 
-    final initializationSettingsIOS = DarwinInitializationSettings(
-      requestAlertPermission: true,
-      requestBadgePermission: true,
-      requestSoundPermission: true,
-      // onDidReceiveLocalNotification:
-      //     (int id, String? title, String? body, String? payload) async {},
-    );
+    final initializationSettingsIOS = const DarwinInitializationSettings(
+
+        // onDidReceiveLocalNotification:
+        //     (int id, String? title, String? body, String? payload) async {},
+        );
 
     final initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);

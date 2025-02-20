@@ -6,7 +6,7 @@ class OnBoardView extends StatelessWidget {
   static const String routeName = '/onboard';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: OnBoardViewBody(),
     );
   }
