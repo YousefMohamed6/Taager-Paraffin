@@ -10,10 +10,11 @@ class FindLocationButton extends StatelessWidget {
     return IconButton(
       icon: const Icon(
         Icons.location_on,
-        size: 64,
+        size: 32,
       ),
       onPressed: () async {
-        await context.read<MapsCubit>().navigateToCurrentLocation();
+        final cubit = context.read<MapsCubit>();
+        await cubit.navigateToUserLocation();
       },
     );
   }

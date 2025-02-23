@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:tager_paraffin/core/managers/colors_manager.dart';
-import 'package:tager_paraffin/core/managers/route_manager.dart';
+import 'package:tager_paraffin/core/managers/router_manager.dart';
 import 'package:tager_paraffin/core/widgets/no_internet_widget.dart';
 import 'package:tager_paraffin/features/language/pressentation/manager/language_provider.dart';
 
@@ -62,7 +62,7 @@ class CustomMatrialApp extends StatelessWidget {
         Locale('en', 'US'),
         Locale('ar', 'EG'),
       ],
-      routerConfig: RouteManager.routConfig,
+      routerConfig: RouterManager.routConfig,
     );
   }
 }

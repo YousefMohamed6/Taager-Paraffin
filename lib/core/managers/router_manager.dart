@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tager_paraffin/features/auth/login/login_cubit/login_cubit.dart';
 import 'package:tager_paraffin/features/auth/login/view/login_view.dart';
@@ -7,13 +8,14 @@ import 'package:tager_paraffin/features/auth/register/view/register_view.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/rest_password_cubit/rest_password_cubit.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/view/rest_password_view.dart';
 import 'package:tager_paraffin/features/language/pressentation/views/language_view.dart';
+import 'package:tager_paraffin/features/maps/di/map_service.dart';
 import 'package:tager_paraffin/features/maps/presentation/manager/maps_cubit.dart';
 import 'package:tager_paraffin/features/maps/presentation/views/maps_view.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/manager/on_board_cubit.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/views/onboard_view.dart';
 import 'package:tager_paraffin/features/splash/view/splash_view.dart';
 
-abstract class RouteManager {
+abstract class RouterManager {
   static GoRouter routConfig = GoRouter(
     initialLocation: SplashView.routeName,
     routes: [
@@ -67,8 +69,10 @@ abstract class RouteManager {
         path: MapsScreen.routeName,
         name: MapsScreen.routeName,
         builder: (context, state) {
+          GoogleMapsService().initDi();
           return BlocProvider(
-            create: (context) => MapsCubit(),
+            create: (context) =>
+                GetIt.instance<MapsCubit>()..navigateToUserLocation(),
             child: const MapsScreen(),
           );
         },

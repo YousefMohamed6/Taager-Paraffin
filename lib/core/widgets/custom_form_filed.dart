@@ -20,7 +20,8 @@ class CustomFormFeiled extends StatelessWidget {
     required this.enableBorderSideColor,
     required this.enableBorderRedius,
     this.inputStyle,
-    this.obscureText, this.keyboardType,
+    this.obscureText,
+    this.keyboardType,
   });
   final TextEditingController controller;
   final String validatorText;
@@ -59,7 +60,7 @@ class CustomFormFeiled extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.start,
       obscureText: obscureText ?? false,
       style: inputStyle,
-      keyboardType:keyboardType ,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         fillColor: fillColor,
         hintText: hintText,

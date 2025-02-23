@@ -57,8 +57,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '770964686305',
     projectId: 'tajer-paraffin',
     storageBucket: 'tajer-paraffin.firebasestorage.app',
-    androidClientId: '770964686305-aipp2e1s3jls4u6foosu8g4kg8muuo3j.apps.googleusercontent.com',
-    iosClientId: '770964686305-bbpsflfti0h0fp4e11lj42rf0ir2iiop.apps.googleusercontent.com',
+    androidClientId:
+        '770964686305-aipp2e1s3jls4u6foosu8g4kg8muuo3j.apps.googleusercontent.com',
+    iosClientId:
+        '770964686305-bbpsflfti0h0fp4e11lj42rf0ir2iiop.apps.googleusercontent.com',
     iosBundleId: 'com.example.tagerParaffin',
   );
 
@@ -81,5 +83,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'tajer-paraffin.firebasestorage.app',
     measurementId: 'G-WJPR2GFPNG',
   );
-
 }
