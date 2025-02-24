@@ -48,6 +48,15 @@ class MapService {
     );
   }
 
+  Future<void> animateCameraToLatLngBounds({
+    required LatLngBounds LatLngBounds,
+    double? padding,
+  }) async {
+    await mapController?.animateCamera(
+      CameraUpdate.newLatLngBounds(LatLngBounds, padding ?? 16),
+    );
+  }
+
   Marker addMarkerToLocation({
     required LatLng latlng,
     required String markerId,

@@ -33,7 +33,7 @@ class LocationService {
     await _checkAndRequestLocationPermission();
   }
 
-  Future<LocationData?> getUserLocation() async {
+  Future<LocationData> getUserLocation() async {
     await checkLocationEnable();
     return await userLocation.getLocation();
   }

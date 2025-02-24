@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tager_paraffin/features/maps/presentation/widgets/cutom_map_view.dart';
-import 'package:tager_paraffin/features/maps/presentation/widgets/find_location_button.dart';
+import 'package:tager_paraffin/features/maps/presentation/widgets/get_direction_button.dart';
 
 class MapsScreen extends StatelessWidget {
   const MapsScreen({super.key});
@@ -11,7 +11,7 @@ class MapsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: FindLocationButton(),
+      bottomSheet: GetDirectionButton(),
       body: CustomMapView(),
     );
   }
