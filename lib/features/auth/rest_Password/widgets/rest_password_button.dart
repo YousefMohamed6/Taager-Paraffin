@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tager_paraffin/core/widgets/custom_button.dart';
 import 'package:tager_paraffin/core/widgets/loading_indcator.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/rest_password_cubit/rest_password_cubit.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
 
 class RestPasswordButton extends StatelessWidget {
   const RestPasswordButton({super.key});

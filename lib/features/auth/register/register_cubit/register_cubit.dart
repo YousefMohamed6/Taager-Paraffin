@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tager_paraffin/core/managers/keys_manager.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
 
 part 'register_state.dart';
 

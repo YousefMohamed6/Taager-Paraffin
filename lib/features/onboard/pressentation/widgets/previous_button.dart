@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tager_paraffin/core/widgets/custom_label_widget.dart';
 import 'package:tager_paraffin/features/onboard/pressentation/manager/on_board_cubit.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
 
 class PreviousButton extends StatelessWidget {
   const PreviousButton({super.key});

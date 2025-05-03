@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tager_paraffin/core/widgets/custom_button.dart';
 import 'package:tager_paraffin/core/widgets/loading_indcator.dart';
 import 'package:tager_paraffin/features/auth/login/login_cubit/login_cubit.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});

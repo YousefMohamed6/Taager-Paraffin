@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +6,7 @@ import 'package:tager_paraffin/core/managers/colors_manager.dart';
 import 'package:tager_paraffin/core/managers/router_manager.dart';
 import 'package:tager_paraffin/core/widgets/no_internet_widget.dart';
 import 'package:tager_paraffin/features/language/pressentation/manager/language_provider.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp._internal();
@@ -52,16 +51,11 @@ class CustomMatrialApp extends StatelessWidget {
         primaryColor: ColorsManager.primaryColor,
       ),
       locale: context.watch<LanguageProvider>().locale,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('ar', 'EG'),
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      localeResolutionCallback: (locale, supportedLocales) {
+        return context.watch<LanguageProvider>().locale;
+      },
       routerConfig: RouterManager.routConfig,
     );
   }
