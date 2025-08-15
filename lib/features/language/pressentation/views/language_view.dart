@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:tager_paraffin/generated/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,3 +33,39 @@ class LanguageView extends StatelessWidget {
     );
   }
 }
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tager_paraffin/core/widgets/custom_label_widget.dart';
+import 'package:tager_paraffin/core/widgets/screen_padding.dart';
+import 'package:tager_paraffin/features/language/pressentation/widgets/custom_app_icon.dart';
+import 'package:tager_paraffin/features/language/pressentation/widgets/language_items.dart';
+import 'package:tager_paraffin/features/language/pressentation/widgets/save_language_button.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
+
+class LanguageView extends StatelessWidget {
+  const LanguageView({super.key});
+  static const String routeName = '/language';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomSheet: const SaveLanguageButton(),
+      body: ScreenPadding(
+        child: ScreenPadding(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomAppIcon(),
+              SizedBox(height: 16.h),
+              CustomLabel(text: AppLocalizations.of(context)!.select_language),
+              SizedBox(height: 16.h),
+              const LanguageItems(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+>>>>>>> e1be5033add3d48e73b1409a31d21df9a80ea207

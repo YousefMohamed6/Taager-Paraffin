@@ -8,6 +8,10 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:tager_paraffin/core/services/google_map_service.dart';
 import 'package:tager_paraffin/core/services/location_service.dart';
+<<<<<<< HEAD
+=======
+import 'package:tager_paraffin/core/services/google_map_service.dart';
+>>>>>>> e1be5033add3d48e73b1409a31d21df9a80ea207
 import 'package:tager_paraffin/features/maps/data/models/place_details/place_details.dart';
 import 'package:tager_paraffin/features/maps/data/models/place_model/place_model.dart';
 import 'package:tager_paraffin/features/maps/domain/use_cases/get_encode_route_use_case.dart';
@@ -135,11 +139,19 @@ class MapsCubit extends Cubit<MapsState> {
         },
         distanceFilter: 0,
       );
+<<<<<<< HEAD
     } on LocationServiceException catch (e) {
       //  TODO:
     } on LocationPermissionException catch (e) {
       //  TODO:
     } on DeniedForeverException catch (e) {
+=======
+    } on LocationServiceException {
+      //  TODO:
+    } on LocationPermissionException {
+      //  TODO:
+    } on DeniedForeverException {
+>>>>>>> e1be5033add3d48e73b1409a31d21df9a80ea207
       //  TODO:
     } catch (e) {
       emit(MapsState.failure(e.toString()));
