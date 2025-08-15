@@ -71,8 +71,7 @@ abstract class RouterManager {
         builder: (context, state) {
           GoogleMapsService().initDi();
           return BlocProvider(
-            create: (context) =>
-                GetIt.instance<MapsCubit>()..navigateToUserLocation(),
+            create: (context) => GetIt.instance<MapsCubit>()..getDirection(),
             child: const MapsScreen(),
           );
         },

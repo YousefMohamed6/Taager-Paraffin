@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:tager_paraffin/core/services/google_map_service.dart';
 import 'package:tager_paraffin/core/services/location_service.dart';
-import 'package:tager_paraffin/core/services/map_service.dart';
 import 'package:tager_paraffin/features/maps/data/models/place_details/place_details.dart';
 import 'package:tager_paraffin/features/maps/data/models/place_model/place_model.dart';
 import 'package:tager_paraffin/features/maps/domain/use_cases/get_encode_route_use_case.dart';
@@ -19,13 +20,14 @@ part 'maps_cubit.freezed.dart';
 part 'maps_state.dart';
 
 class MapsCubit extends Cubit<MapsState> {
-  final MapService mapService = MapService();
+  final GoogleMapService mapService = GoogleMapService();
   final LocationService locationService;
   final String userMarkerId = 'user_location';
   final GetPlacesUseCase getPlasesUseCase;
   final GetPlaceDetailsUseCase getPlaceDetailsUseCase;
   final GetUserLocation getUserLocation;
   final GetEncodeRouteUseCase getEncodeRouteUseCase;
+  final locationSearchController = TextEditingController();
   MapsCubit(
     this.getPlasesUseCase,
     this.getUserLocation,
@@ -42,15 +44,17 @@ class MapsCubit extends Cubit<MapsState> {
   String get newSeccionToken => uuid.v4();
   void addMarkerToLocation(LatLng latlng, String markerId) async {
     emit(const MapsState.loading());
-    final Marker myMarker =
-        mapService.addMarkerToLocation(latlng: latlng, markerId: markerId);
+    mapService.addMarkerToLocation(latlng: latlng, markerId: markerId);
+    final Marker myMarker = mapService.markers
+        .firstWhere((marker) => marker.markerId.value == markerId);
     emit(MapsState<Marker>.success(myMarker));
   }
 
   void addPolylineToLocation(List<LatLng> points) async {
     emit(const MapsState.loading());
-    final Polyline polyline = mapService.addPolylineToLocation(
-        points: points, polylineId: 'polyline_1');
+    mapService.addPolylineToLocation(points: points, polylineId: 'polyline_1');
+    final Polyline polyline = mapService.polylines
+        .firstWhere((polyline) => polyline.polylineId.value == 'polyline_1');
     emit(MapsState<Polyline>.success(polyline));
   }
 
@@ -75,26 +79,6 @@ class MapsCubit extends Cubit<MapsState> {
     }
   }
 
-  Future<void> navigateToUserLocation() async {
-    try {
-      emit(const MapsState.loading());
-      final LocationData locationData = await locationService.getUserLocation();
-      final LatLng latlng =
-          LatLng(locationData.altitude!, locationData.longitude!);
-      addMarkerToLocation(latlng, 'user_location');
-      mapService.animateCameraToLocation(latlng: latlng);
-      emit(MapsState<LatLng?>.success(latlng));
-    } on LocationServiceException catch (e) {
-      //  TODO:
-    } on LocationPermissionException catch (e) {
-      //  TODO:
-    } on DeniedForeverException catch (e) {
-      //  TODO:
-    } catch (e) {
-      emit(MapsState.failure(e.toString()));
-    }
-  }
-
   void clearMarkersAndPolylines() {
     emit(const MapsState.loading());
     mapService.markers.clear();
@@ -105,7 +89,6 @@ class MapsCubit extends Cubit<MapsState> {
   void clearSearchData() {
     emit(const MapsState.loading());
     placesList.clear();
-    mapService.locationSearchController.clear();
     emit(const MapsState.success([]));
   }
 
@@ -125,7 +108,7 @@ class MapsCubit extends Cubit<MapsState> {
       );
       final List<LatLng> points = await decodePolyline(encodedRoute);
       final latLngBounds = mapService.getLatLngBounds(points);
-      await mapService.animateCameraToLatLngBounds(LatLngBounds: latLngBounds);
+      await mapService.animateCameraToLatLngBounds(latLngBounds: latLngBounds);
       isNewSeccion = true;
       emit(const MapsState<bool>.success(true));
     } catch (e) {
@@ -134,9 +117,9 @@ class MapsCubit extends Cubit<MapsState> {
   }
 
   Future<List<LatLng>> decodePolyline(String encodedString) async {
-    final PolylinePoints polylinePoints = PolylinePoints();
+    final PolylinePoints polylinePoints = PolylinePoints(apiKey: '');
     final List<PointLatLng> result =
-        polylinePoints.decodePolyline(encodedString);
+        PolylinePoints.decodePolyline(encodedString);
     final List<LatLng> points =
         result.map((e) => LatLng(e.latitude, e.longitude)).toList();
     return points;
@@ -149,10 +132,15 @@ class MapsCubit extends Cubit<MapsState> {
           final userLocation =
               LatLng(locationData.latitude!, locationData.longitude!);
           addMarkerToLocation(userLocation, userMarkerId);
-          await mapService.animateCameraToLocation(latlng: userLocation);
         },
-        distanceFilter: 10,
+        distanceFilter: 0,
       );
+    } on LocationServiceException catch (e) {
+      //  TODO:
+    } on LocationPermissionException catch (e) {
+      //  TODO:
+    } on DeniedForeverException catch (e) {
+      //  TODO:
     } catch (e) {
       emit(MapsState.failure(e.toString()));
     }
@@ -161,7 +149,6 @@ class MapsCubit extends Cubit<MapsState> {
   @override
   Future<void> close() async {
     mapService.mapController?.dispose();
-    mapService.locationSearchController.dispose();
     _debounce?.cancel();
     super.close();
   }

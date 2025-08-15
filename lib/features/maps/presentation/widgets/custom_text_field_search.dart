@@ -14,7 +14,7 @@ class CustomTextFieldSearch extends StatelessWidget {
       right: 16,
       child: TextField(
         onChanged: (value) async => await cubit.searchLocation(value),
-        controller: cubit.mapService.locationSearchController,
+        controller: cubit.locationSearchController,
         onTapOutside: (event) => FocusManager.instance.primaryFocus!.unfocus(),
         decoration: const InputDecoration(
           suffixIcon: SearchPlaceButton(),
@@ -41,7 +41,7 @@ class SearchPlaceButton extends StatelessWidget {
       icon: const Icon(Icons.search),
       onPressed: () async {
         final cubit = context.read<MapsCubit>();
-        final input = cubit.mapService.locationSearchController.text;
+        final input = cubit.locationSearchController.text;
         await cubit.searchLocation(input);
       },
     );

@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:tager_paraffin/core/extentions/getit_extension.dart';
 import 'package:tager_paraffin/core/services/location_service.dart';
-import 'package:tager_paraffin/core/services/map_service.dart';
+import 'package:tager_paraffin/core/services/google_map_service.dart';
 import 'package:tager_paraffin/core/services/places_api_service.dart';
 import 'package:tager_paraffin/core/services/route_api_service.dart';
 import 'package:tager_paraffin/features/maps/data/repos/map_repo_impl.dart';
@@ -16,8 +16,8 @@ class GoogleMapsService {
   final sl = GetIt.instance;
 
   void initDi() {
-    sl.registerSingletonSafely<MapService>(
-      MapService(),
+    sl.registerSingletonSafely<GoogleMapService>(
+      GoogleMapService(),
     );
     sl.registerSingletonSafely<LocationService>(
       LocationService(),

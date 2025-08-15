@@ -38,7 +38,7 @@ class ThemeManager extends ChangeNotifier {
             .copyWith(error: const Color(0xFFE84D4F)),
         popupMenuTheme: const PopupMenuThemeData(
             color: Colors.white, surfaceTintColor: Colors.white),
-        dialogTheme: const DialogTheme(surfaceTintColor: Colors.white),
+        dialogTheme: const DialogThemeData(surfaceTintColor: Colors.white),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(500))),
@@ -49,7 +49,7 @@ class ThemeManager extends ChangeNotifier {
         ),
         dividerTheme:
             const DividerThemeData(thickness: 0.2, color: Color(0xFFA0A4A8)),
-        tabBarTheme: const TabBarTheme(dividerColor: Colors.transparent),
+        tabBarTheme: const TabBarThemeData(dividerColor: Colors.transparent),
       );
 
   ThemeData dark() => ThemeData(
@@ -72,7 +72,7 @@ class ThemeManager extends ChangeNotifier {
             .copyWith(error: const Color(0xFFdd3135)),
         popupMenuTheme: const PopupMenuThemeData(
             color: Color(0xFF29292D), surfaceTintColor: Color(0xFF29292D)),
-        dialogTheme: const DialogTheme(surfaceTintColor: Colors.white10),
+        dialogTheme: const DialogThemeData(surfaceTintColor: Colors.white10),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(500))),
@@ -83,6 +83,6 @@ class ThemeManager extends ChangeNotifier {
         ),
         dividerTheme:
             const DividerThemeData(thickness: 0.5, color: Color(0xFFA0A4A8)),
-        tabBarTheme: const TabBarTheme(dividerColor: Colors.transparent),
+        tabBarTheme: const TabBarThemeData(dividerColor: Colors.transparent),
       );
 }

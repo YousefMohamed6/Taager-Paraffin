@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tager_paraffin/generated/app_localizations.dart';
 import 'package:tager_paraffin/core/managers/colors_manager.dart';
 import 'package:tager_paraffin/core/managers/styles_manager.dart';
 import 'package:tager_paraffin/features/auth/rest_Password/view/rest_password_view_body.dart';

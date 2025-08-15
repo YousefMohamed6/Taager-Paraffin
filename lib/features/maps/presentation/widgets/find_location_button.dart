@@ -14,7 +14,7 @@ class FindLocationButton extends StatelessWidget {
       ),
       onPressed: () async {
         final cubit = context.read<MapsCubit>();
-        await cubit.navigateToUserLocation();
+        await cubit.getDirection();
       },
     );
   }
