@@ -6,11 +6,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-<<<<<<< HEAD
-  sdk: '>=3.2.6 <4.0.0'
-=======
   sdk: '>=3.3.0 <4.0.0'
->>>>>>> e1be5033add3d48e73b1409a31d21df9a80ea207
 
 dependencies:
   bloc: ^9.0.0
@@ -28,36 +24,21 @@ dependencies:
   flutter_bloc: ^9.0.0
   flutter_facebook_auth: ^7.1.1
   flutter_launcher_icons: ^0.14.3
-<<<<<<< HEAD
-  flutter_local_notifications: ^19.4.0
-  flutter_localization: ^0.3.3
-  flutter_polyline_points: ^3.0.1
-=======
   flutter_local_notifications: ^19.1.0
   flutter_localization: ^0.3.2
   flutter_localizations:
     sdk: flutter
   flutter_polyline_points: ^2.1.0
->>>>>>> e1be5033add3d48e73b1409a31d21df9a80ea207
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
   fluttertoast: ^8.2.12
   font_awesome_flutter: ^10.8.0
-<<<<<<< HEAD
-  freezed: ^3.2.0
-  freezed_annotation: ^3.1.0
-  geocoding: ^4.0.0
-  geolocator: ^14.0.2
-  get_it: ^8.0.3
-  go_router: ^16.1.0
-=======
   freezed: ^3.0.6
   freezed_annotation: ^3.0.0
   geocoding: ^3.0.0
   geolocator: ^14.0.0
   get_it: ^8.0.3
   go_router: ^15.1.1
->>>>>>> e1be5033add3d48e73b1409a31d21df9a80ea207
   google_maps_flutter: ^2.10.0
   google_maps_webapi: ^0.0.24
   google_sign_in: ^7.1.1
